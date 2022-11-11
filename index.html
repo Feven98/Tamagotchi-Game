@@ -12,23 +12,24 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- <div class="tamagotchi"> -->
-        <!-- <img src="Chamametchi_anime.PNG.webp"> -->
-    <!-- </div> -->
       <!-- title of the game -->
     <h1>Tamagotchi</h1>
-<div id= "game" > 
+<div class= "game" id="game" >
     <img src="https://www.seekpng.com/png/detail/349-3497709_tamagotchi-mametchi-mametchi-tamagotchi.png">
 </div> 
-<div>Name: <strong><span class="name"></span></strong></div>
-<div>Age: <strong><span class="age"></span> 5 (per minute)</strong></div>
-<!-- <div id="container"> -->
-    <!-- <div id="animate">My animation will go here</div> -->
+<div class="name">
+    <label for="enterName">Enter Your Pet Name: </label>
+    <input type="text" name="enterName" id="enterName">
+</br>
+<button type="submit" name="button" id="my Pet">Create Pet </button>
+</div>
     <!-- Actions that are required from the user -->
-  <button onclick="" class="btn">Feed</button>
-  <button onclick="" class="btn">Sleep</button>
-  <button onclick="" class="btn">Play</button>
-  <div class="feelings">
+<div class="action">
+  <button class="btn">Feed</button>
+  <button class="btn">Sleep</button>
+  <button class="btn">Play</button>
+</div>
+  <div class="feeling">
     <button class="hunger">Hunger: 1</button>
     <button class="sleepiness">Sleepiness: 1</button>
     <button class="boredom">Boredom: 1</button>
