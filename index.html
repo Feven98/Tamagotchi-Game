@@ -7,16 +7,18 @@
     <!-- title of the webpage -->
     <title>Tamagotchi Game</title>
     <!-- import webpage's javascript file -->
-    <script src="./main.js"></script>
+    <!-- <script src="./main.js" defer></script> -->
     <!-- import webpages styleshhet -->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
       <!-- title of the game -->
-    <h1>Tamagotchi</h1>
+    <!-- <h1>Tamagotchi</h1> -->
 <div class= "game" id="game" >
+  <div class="start">Press Any Key To Start</div>
     <img src="https://www.seekpng.com/png/detail/349-3497709_tamagotchi-mametchi-mametchi-tamagotchi.png">
-</div> 
+   
+</div>
 <div class="name">
     <label for="enterName">Enter Your Pet Name: </label>
     <input type="text" name="enterName" id="enterName">
@@ -25,15 +27,16 @@
 </div>
     <!-- Actions that are required from the user -->
 <div class="action">
-  <button class="btn">Feed</button>
-  <button class="btn">Sleep</button>
-  <button class="btn">Play</button>
+  <button class="hunger-btn">Feed Level: 0</button>
+  <button class="sleep-btn">Sleep Level: 0</button>
+  <button class="board-btn">Play Level: 0</button>
 </div>
-  <div class="feeling">
-    <button class="hunger">Hunger: 1</button>
-    <button class="sleepiness">Sleepiness: 1</button>
-    <button class="boredom">Boredom: 1</button>
-
+  <div id="buttons">
+    <button class="feed-pet">Feed Pet</button>
+    <button class="turn-light-off">Turn Light Off</button>
+    <button class="play">Play</button>
+    <button class="reset">Reset</button>
   </div>
+  <script src="./main.js" defer></script>
  </body>
 </html>  
