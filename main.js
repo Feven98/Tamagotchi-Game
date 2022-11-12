@@ -1,14 +1,6 @@
 // Instantiate class for tamagotchi(tamagotchi object)
-// window.onload = function(){
-//  let myAge= 5; //characters age
-//  let ageincrease= setInterval(myAge, 1) // incremental age of character by 1 min
-//  let name="";
-// }  
 console.log("please")
-// const actionElement = document.querySelectorAll("feed");
-// actionElement.forEach(feed =>{
-//     feed.addEventListener('click'), handClick, {once:true}}
-//     )
+
 // variables
  const feedBtn= document.querySelector(".hunger-btn")
  const feedTag= document.querySelector(".feed-pet")
@@ -20,17 +12,7 @@ console.log("please")
  console.log(feedBtn.innerText);
  console.log(playTag.innerText);
  console.log(feedTag.innerText);
-// let timerDisplay=document.getElementById('timer')
-// let reset_timer_btn= document.getElementById('reset_timer_btn')
-// const timer= setInterval(()=> {
-//     const time= parseInt(timerDisplay)
-// time=timerDisplay
-// }, 1000)
 
-// const resettimer =(() =>{
-
-// })
-// timer()
 let hungerlevel = 1;
 let sleepinesslevel=1;
 let boerdomlevel=1;
@@ -51,3 +33,25 @@ setInterval(() => {
 setInterval(() => {
     boerdomlevel--
 },4000)
+function addPoints(){
+    hungerlevel+=1;
+    hungryfeedBtn.innerHTML = 'Feed Level: ${hungerlevel}';
+    }
+
+for(let i=1; i<11; i++){
+
+}
+// Adding Event Listener
+// For All action Level
+const myBtn1 = document.getElementsByClassName('action');
+console.log(myBtn1);
+myBtn1[0].addEventListener("click", function onClick(){
+console.log("the button was clicked");
+});
+// For All buttons Level
+const myBtn2 = document.getElementsByClassName('buttons');
+console.log(myBtn2);
+myBtn2[0].addEventListener("click", function onClick(){
+console.log("button clicked");
+});
+
