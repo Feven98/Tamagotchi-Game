@@ -54,4 +54,16 @@ console.log(myBtn2);
 myBtn2[0].addEventListener("click", function onClick(){
 console.log("button clicked");
 });
+// for create pet
+const myBtn3 = document.getElementsByClassName('name');
+console.log(myBtn3);
+myBtn3[0].addEventListener("click", function onClick(){
+console.log("clicked");
+});
 
+// creating name button
+function myName(){
+    let enterName= document.querySelector("#enterName");
+    let message= document.querySelector("#message");
+    message.innerHTML= "Welcome To Tomogotchi Game " + enterName.value;
+}

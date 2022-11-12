@@ -13,17 +13,17 @@
 </head>
 <body>
       <!-- title of the game -->
-    <!-- <h1>Tamagotchi</h1> -->
+    <!-- <h1>What Is Your Pet Name?</h1> -->
 <div class= "game" id="game" >
   <div class="start">Press Any Key To Start</div>
     <img src="https://www.seekpng.com/png/detail/349-3497709_tamagotchi-mametchi-mametchi-tamagotchi.png">
    
 </div>
 <div class="name">
-    <label for="enterName">Enter Your Pet Name: </label>
+    <label for="enterName">Name: </label>
     <input type="text" name="enterName" id="enterName">
-</br>
-<button type="submit" name="button" id="my Pet">Create Pet </button>
+<button type="submit" onclick="myName()" name="button" id="my Pet">Create Pet </button>
+<h1 id="message"></h1>
 </div>
     <!-- Actions that are required from the user -->
 <div class="action">
