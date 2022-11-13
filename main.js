@@ -10,44 +10,45 @@ console.log("please")
  const playTag= document.querySelector(".play")
  const resetTag=document.querySelector(".reset")
  const ageTag= document.querySelector(".ageBtn")
- console.log(feedBtn.innerText);
- console.log(playTag.innerText);
- console.log(ageTag.innerText);
+ const startBtn=document.querySelector(".start")
+//  console.log(feedBtn.innerText);
+//  console.log(playTag.innerText);
+//  console.log(ageTag.innerText);
 
-let hungerlevel = 1;
-let sleepinesslevel=1;
-let boerdomlevel=1;
-let agelevel= 0;
-let feed=0;
-let play=0;
-let tired=0;
-let age=0;
+// Variables declaration that are going to be used in the program
+let myPet={action :{ present:false,sleepinesslevel:0,
+ boerdomlevel:0,hungerlevel:0,}, birthpet(){
+ myPet.hungerlevel= 0
+ myPet.sleepinesslevel=0
+ myPet.boerdomlevel=0
+ myPet.name=prompt('name pet:')
+ myPetNameText.innerHTML=pet.action.present
+ myPet.age=0
+ myPetAgeText.innerHTML=pet.age
+ myPetAge
+ myPetStatus
+},}
+//petStatus
+//petAge
 
-setInterval(() => {
-    if(hungerlevel<=10 && sleepinesslevel<=10 && boerdomlevel<=10){
-    hungerlevel++
-    sleepinesslevel++
-    boerdomlevel++
-     //console.log(hungerlevel,sleepinesslevel,boerdomlevel)
-}
-},1000)
-setInterval(() => {
-    hungerlevel--
-},2000)
-setInterval(() => {
-    sleepinesslevel--
-},3000)
-setInterval(() => {
-    boerdomlevel--
-},4000)
-// function addPoints(){
-//     hungerlevel+=1;
-//     hungryfeedBtn.innerHTML = 'Feed Level: ${hungerlevel}';
-//     }
-
-// for(let i=1; i<11; i++){
-
+// setInterval(() => {
+//     if(hungerlevel<=10 && sleepinesslevel<=10 && boerdomlevel<=10){
+//     hungerlevel++
+//     sleepinesslevel++
+//     boerdomlevel++
+//      console.log(hungerlevel,sleepinesslevel,boerdomlevel)
 // }
+// },1000)
+// setInterval(() => {
+//     hungerlevel--
+// },2000)
+// setInterval(() => {
+//     sleepinesslevel--
+// },3000)
+// setInterval(() => {
+//     boerdomlevel--
+// },4000)
+
 // Adding Event Listener
 // For All action Level
 const myBtn1 = document.getElementsByClassName('action');
@@ -62,7 +63,7 @@ myBtn2[0].addEventListener("click", function onClick(){
 console.log("button clicked");
 });
 // for create pet
-const myBtn3 = document.getElementsByClassName('home');
+const myBtn3 = document.getElementsByClassName('home-included');
 console.log(myBtn3);
 myBtn3[0].addEventListener("click", function onClick(){
 console.log("clicked");
@@ -111,6 +112,37 @@ playTag.addEventListener('click', () =>{
     console.log(play);
     playTag.innerHTML = 'Play'
 })
+// Assigning interval for the declared variables
+let petStatus =setInterval(() => {hungerlevelOne(), sleepinesslevelTwo(), boerdomlevelThree()},2000)
+// let petAge=setInterval(() =>{petAgeCount()},1000)
+
+// creating functions for the above values
+function startGame(){
+pet.action()
+    startButton.disabled=true;
+}
+
+let playButton=document.querySelector(".play")
+console.log(playButton.innerText)
+let petBoaredomText=document.querySelector(".sleepBtn")
+console.log(petBoaredomText.innerText)
+// function stopTimer({
+//     clearInterval()
+// })
+// function Feed(){
+//     hungerlevel -=1;
+//     if(hungerlevel<0){
+//         hungerlevel=0;
+//     }
+// }
+function hungerlevelOne() {
+    if(myPet.action.boerdomlevel!==10){
+        playButton.disabled= false
+        myPet.action.boerdomlevel++
+        petBoaredomText.innerHTML=myPet.action.boerdomlevel
+    }
+}
+
 
 
 

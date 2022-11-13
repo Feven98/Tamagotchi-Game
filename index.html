@@ -14,10 +14,12 @@
 <body>
   <div class="home">
     <h1>Hello</h1>
+    <div class="home-included">
     <label for="enterName">Name: </label>
     <input type="text" name="enterName" id="enterName">
 <button type="submit" onclick="myName()" name="button" id="my Pet">Create Pet </button>
 <h1 id="message"></h1>
+  </div>
   </div>
       <!-- title of the game -->
     <!-- <h1>What Is Your Pet Name?</h1> -->
@@ -25,15 +27,17 @@
   <!-- <div class="start">Press Any Key To Start</div> -->
     <img src="https://www.seekpng.com/png/detail/349-3497709_tamagotchi-mametchi-mametchi-tamagotchi.png">
    
-</div>
+<!-- </div> -->
     <!-- Actions that are required from the user -->
 <div class="action">
-  <button class="hungerBtn">Feed Level: 0</button>
-  <button class="sleepBtn">Sleep Level: 0</button>
-  <button class="boardBtn">Play Level: 0</button>
-  <button class="ageBtn">Age: 0</button>
+  <p>Hunger Level: <button class="hungerBtn">Feed Level: 0</button></p>
+  <p>Sleep Level: <button class="sleepBtn">Sleep Level: 0</button></p>
+  <p>Board Level: <button class="boardBtn">Play Level: 0</button></p>
+  <p>Age: <button class="ageBtn">Age: 0</button></p>
+</div>
 </div>
   <div class="buttons">
+    <button class="start">Start</button>
     <button class="feedPet">Feed Pet</button>
     <button class="turnLightOff">Turn Light Off</button>
     <button class="play">Play</button>
