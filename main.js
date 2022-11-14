@@ -16,20 +16,26 @@ console.log("please")
 //  console.log(ageTag.innerText);
 
 // Variables declaration that are going to be used in the program
-let myPet={action :{ present:false,sleepinesslevel:0,
- boerdomlevel:0,hungerlevel:0,}, tamagotchi(){
- myPet.hungerlevel= 0
- myPet.sleepinesslevel=0
- myPet.boerdomlevel=0
- myPet.name=prompt('name pet:')
- myPetNameText.innerHTML=myPet.action.present
- myPet.action.present=true
- mypetCommentSection.innerHTML=myPet.action.present
- myPet.age=0
- myPetAgeText.innerHTML=myPet.age
- myPetAge
- myPetStatus
-},}
+let myPet={
+    action :{ 
+        present:false,
+        sleepinesslevel:0,
+        boerdomlevel:0,
+        hungerlevel:0,  
+        age:0,
+    }, 
+    tamagotchi(){
+        // myPet.hungerlevel= 0
+        // myPet.sleepinesslevel=0
+        // myPet.boerdomlevel=0
+        myPet.name=prompt('name pet:')
+        myPetNameText.innerHTML=myPet.enterName
+        myPet.action.present=true
+        myPetCommentSection.innerHTML=myPet.action.present
+        myPetAgeText=myPet.age
+        myPetAge
+        myPetStatus
+    },}
 // setInterval(() => {
 //     if(hungerlevel<=10 && sleepinesslevel<=10 && boerdomlevel<=10){
 //     hungerlevel++
@@ -112,8 +118,8 @@ function myName(){
 //     playTag.innerHTML = 'Play'
 // })
 // Assigning interval for the declared variables
-let petStatus =setInterval(() => {hungerlevelOne(), sleepinesslevelTwo(), boerdomlevelThree()},2000)
-let petAge=setInterval(() =>{petAgeCount()},1000)
+let myPetStatus =setInterval(() => {hungerlevelOne(), sleepinesslevelTwo(), boerdomlevelThree()},2000)
+let myPetAge=setInterval(() =>{myPetAgeCount()},1000)
 
 // creating functions for the above values
 function startGame(){
@@ -131,14 +137,7 @@ function stopTimer(){
     resetButton.disabled=true;
     startButton.disabled=false;
 }
-function myPetAgeValue(){
-    myPet.age++
-    myPetAgeText.innerHTML=myPet.age
-}
-function petAgeCount(){
-    myPet.age++
-    myPetAgeText.innerHTML=myPet.age
-}
+
 
 function hungerlevelOne() {
     if(myPet.action.hungerlevel!==10){
@@ -163,14 +162,21 @@ function boerdomlevelThree() {
         myPetBoaredomText.innerHTML=myPet.action.boerdomlevel
     }
 }
+function myPetAgeCount(){
+    myPet.action.age++
+    myPetAgeText.innerHTML=myPet.action.age
+}
+
 // Declaring variables for the variables above
 let playButton=document.querySelector(".play")
 console.log(playButton.innerText)
 let myPetBoaredomText=document.querySelector("#sleeptext")
 myPetBoaredomText.innerHTML=myPet.action.boerdomlevel
 console.log(myPetBoaredomText.innerText)
-let myPetAgeText=document.querySelector(".ageBtn")
+let myPetAgeText=document.querySelector("#age")
+ myPetAgeText.innerHTML=myPet.age
 console.log(myPetAgeText.innerHTML)
+let ageButton=document.querySelector(".ageBtn")
 let feedButton=document.querySelector(".feedPet")
 console.log(feedButton.innerText)
 let myPetHungerText=document.querySelector("#hungertext")
@@ -180,25 +186,84 @@ let sleepButton=document.querySelector(".turnLightOff")
 console.log(sleepButton.innerText)
 let myPetSleepText=document.querySelector("#boardtext")
 let startButton=document.querySelector(".start")
-
+let resetButton=document.querySelector(".reset")
+let myPetCommentSection=document.querySelector(".commentSection")
+console.log(myPetCommentSection.innerText)
+myPetCommentSection.innerHTML=myPet.action.present
+let myPetNameText=document.querySelector("#myPet")
+// console.log(myPetNameText.innerText)
+// myPetNameText.innerHTML=myPet.myPet
+// console.log(myPetCommentSection.innerText)
 // for the game over(pet Deed)
-function petDeed(){
+function myPetDead(){
     if(myPet.action.hungerlevel===10){
         myPet.action.present=false
-mypetCommentSection.innerHTML="pet died with hunger"
+myPetCommentSection.innerHTML="pet died with hunger"
 stopTimer()
     }
 else if(myPet.action.sleepinesslevel===10){
     myPet.action.present=false
-mypetCommentSection.innerHTML="pet sleepy head"
+myPetCommentSection.innerHTML="pet sleepy head"
 stopTimer()
 }else if(myPet.action.boerdomlevel===10){
     myPet.action.present=false
-mypetCommentSection.innerHTML="pet died with boerd"
+myPetCommentSection.innerHTML="pet died with boerd"
 stopTimer()
 }
 }
-startButton.addEventListener("click",startGame)
+
+ startButton.addEventListener("click",startGame)
+// resetButton.addEventListener("click",resetGame)
 playButton.addEventListener("click",boerdomlevelThree)
 sleepButton.addEventListener("click",sleepinesslevelTwo)
 feedButton.addEventListener("click",hungerlevelOne)
+feedButton.addEventListener("click",decreaseHunger)
+
+
+// function decreaseHunger(){
+//     if(myPet.action.hungerlevel===0){
+//         feedButton.disabled=true
+//     } else{
+//         myPet.action.hungerlevel--
+//         myPetHungerText.innerHTML=myPet.action.hungerlevel
+//     }checkmyPetAction()
+//         // myPet.action.hungerlevel
+// }
+
+//decrement hunger level
+// feedButton.addEventListener('click', () =>{
+//     if(myPet.action.hungerlevel===0){
+//         feedButton.disabled=true
+//     }else if(myPet.action.hungerlevel>1){
+//         myPet.action.hungerlevel-=1
+//     }
+//     });
+    //     hungerlevel +=1;
+    //     console.log(hungerlevel);
+    //     feedBtn.innerHTML = 'Feed Level: ${hungerlevel}'
+    // })
+    
+
+
+
+
+
+
+
+
+function checkmyPetAction(){
+    if(myPet.action.hungerlevel===0){
+        feedButton.disabled=true;
+    }else if(myPet.action.sleepinesslevel===0){
+        sleepButton.disabled=true;
+    }else if(myPet.action.boerdomlevel===0){
+        playButton.disabled=true;
+    }
+    else if(myPet.action.hungerlevel===10){
+        myPetDead()
+    }else if(myPet.action.sleepinesslevel===10){
+        myPetDead()
+    }else if(myPet.action.boerdomlevel===10){
+        myPetDead()
+    }
+}
